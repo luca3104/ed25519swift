@@ -11,6 +11,13 @@ Ed25519 requires Swift 4.
 
 macOS, iOS
 
+## Install
+
+### CocoaPods
+
+```
+pod 'ed25519swift', :git => 'https://github.com/luca3104/ed25519swift.git'
+```
 ## Dependency
 
 [CryptoSwift](https://github.com/krzyzanowskim/CryptoSwift) for sha3-512
