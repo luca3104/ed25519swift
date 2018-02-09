@@ -37,6 +37,6 @@ func sha512(_ s:[UInt8]) -> [UInt8] {
     })
     return digest
 #else
-    return s.sha512()
+    return s.sha3(.sha512)
 #endif
 }

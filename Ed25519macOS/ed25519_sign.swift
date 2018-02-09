@@ -18,7 +18,7 @@ public struct Ed25519 {
     {
         r = sha512(Array(k[0..<len]))
     }
-
+    
     private static func randombytes(_ r:inout [UInt8], len:Int)
     {
         r = [UInt8](repeating:0, count:len)
@@ -26,7 +26,7 @@ public struct Ed25519 {
         let result = SecRandomCopyBytes(kSecRandomDefault, len, &r)
         assert(result == 0)
     }
-
+    
     private static func crypto_verify_32(_ x:[UInt8], _ y:[UInt8]) -> Bool
     {
         if x.count != 32 || y.count != 32 {
@@ -39,7 +39,7 @@ public struct Ed25519 {
         }
         return true
     }
-
+    
     // create keypair
     // @param pk: 32bytes
     // @param sk: 32bytes
@@ -88,7 +88,7 @@ public struct Ed25519 {
         }
         return true
     }
-
+    
     // signing
     // sm: 64 bytes + message length
     // m: message
@@ -154,9 +154,12 @@ public struct Ed25519 {
         // S
         var a:[UInt8] = [UInt8](repeating:0, count:32)
         sc.sc25519_to32bytes(&a, scs) /* cat s */
+        
         // set S
         for i in 0..<32 {
             sm[32+i] = a[i]
         }
+        sm = Array(sm.prefix(64))
     }
 }
+

@@ -12,7 +12,8 @@ public extension Ed25519 {
     // decrypt
     // @param sm  sinagure 64bytes + message
     // @param pk  primary key 32bytes
-    public static func crypto_sign_open(_ sm:[UInt8], _ pk:[UInt8]) -> Bool {
+    public static func crypto_sign_open(_ sig:[UInt8], _ msg:[UInt8], _ pk:[UInt8]) -> Bool {
+        let sm = Array((sig.hexDescription() + msg.hexDescription()).hexa2Bytes)
         let smlen = sm.count
         var m:[UInt8] = [UInt8](repeating:0, count: smlen + 64)
         var pkcopy = [UInt8](repeating:0, count:32)
@@ -23,6 +24,7 @@ public extension Ed25519 {
         var get2 = ge()
         var schram = sc()
         var scs = sc()
+        
         
         if pk.count != 32 { return false }
         if smlen < 64 { return false }
@@ -52,3 +54,11 @@ public extension Ed25519 {
         return rcopy == rcheck
     }
 }
+
+extension String {
+    var hexa2Bytes: [UInt8] {
+        let hexa = Array(characters)
+        return stride(from: 0, to: characters.count, by: 2).flatMap { UInt8(String(hexa[$0..<$0.advanced(by: 2)]), radix: 16) }
+    }
+}
+
