@@ -12,7 +12,7 @@ public extension Ed25519 {
     // decrypt
     // @param sm  sinagure 64bytes + message
     // @param pk  primary key 32bytes
-    public static func crypto_sign_open(_ sig:[UInt8], _ msg:[UInt8], _ pk:[UInt8]) -> Bool {
+    public static func verify(_ sig:[UInt8], _ msg:[UInt8], _ pk:[UInt8]) -> Bool {
         let sm = Array((sig.hexDescription() + msg.hexDescription()).hexa2Bytes)
         let smlen = sm.count
         var m:[UInt8] = [UInt8](repeating:0, count: smlen + 64)

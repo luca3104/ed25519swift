@@ -43,7 +43,7 @@ public struct Ed25519 {
     // create keypair
     // @param pk: 32bytes
     // @param sk: 32bytes
-    public static func crypto_sign_keypair() -> (pk:[UInt8], sk:[UInt8])
+    public static func generate_keypair() -> (pk:[UInt8], sk:[UInt8])
     {
         var sk:[UInt8] = [UInt8](repeating:0, count:32)
         // create secret key 32byte
@@ -78,7 +78,7 @@ public struct Ed25519 {
         return pk
     }
     
-    public static func crypto_isvalid_keypair(_ pk:[UInt8], _ sk:[UInt8]) -> Bool
+    public static func isvalid_keypair(_ pk:[UInt8], _ sk:[UInt8]) -> Bool
     {
         if pk.count != 32 { return false }
         if sk.count != 32 { return false }
@@ -93,7 +93,7 @@ public struct Ed25519 {
     // sm: 64 bytes + message length
     // m: message
     // return : R + m + S
-    public static func crypto_sign(_ sm:inout [UInt8], _ m:[UInt8], _ skpk:[UInt8])
+    public static func sign(_ sm:inout [UInt8], _ m:[UInt8], _ skpk:[UInt8])
     {
         assert(skpk.count == 64)
         let mlen:Int = m.count
