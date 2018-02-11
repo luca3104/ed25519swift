@@ -43,7 +43,7 @@ static func sign(_ msg:String, _ pri:String, _ pub:String)) -> String
 
 ### Validation
 ``` swift
-static func verify(_ sig:String, _ msg:String, _ pri:String) -> Bool
+static func verify(_ sig:String, _ msg:String, _ pub:String) -> Bool
 ```
 
 ## Implemantation
