@@ -33,17 +33,17 @@ import Ed25519macOS // direct
 or
 import ed25519swift // pods
 
-static func generate_keypair() -> (pk:[UInt8], sk:[UInt8])
+static func generate_keypair() -> (pub:[UInt8], pri:[UInt8])
 ```
 
 ### Signing
 ``` swift
-static func sign(_ sm:inout [UInt8], _ m:[UInt8], _ skpk:[UInt8])
+static func sign(_ m:[UInt8], _ pri:[UInt8], _ pub:[UInt8]))
 ```
 
 ### Validation
 ``` swift
-static func verify(_ sig:[UInt8], _ msg:[UInt8], _ pk:[UInt8]) -> Bool
+static func verify(_ sig:[UInt8], _ msg:[UInt8], _ pri:[UInt8]) -> Bool
 ```
 
 ## Implemantation
