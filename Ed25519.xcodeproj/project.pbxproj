@@ -11,6 +11,8 @@
 		3C8499EBFAB5A803775B2DDF /* Pods_Ed25519ref.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6082939BC80F8643CC3DCEF4 /* Pods_Ed25519ref.framework */; };
 		6D25491A20304B320088028C /* ed25519.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D25491920304B320088028C /* ed25519.swift */; };
 		6D25491C20304B470088028C /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D25491B20304B470088028C /* extensions.swift */; };
+		6D25491D20304C080088028C /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D25491B20304B470088028C /* extensions.swift */; };
+		6D25491E20304C100088028C /* ed25519.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D25491920304B320088028C /* ed25519.swift */; };
 		86EB8AE0FC9102418C68A0B4 /* Pods_Ed25519macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F59917A0CF8FCDB27CDF7F3 /* Pods_Ed25519macOS.framework */; };
 		A22303721FD5701E00CA0FE8 /* ed25519_utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D235F21ECFFD2600BAD20C /* ed25519_utility.swift */; };
 		A22303731FD5701E00CA0FE8 /* ed25519_fe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27AECA21ED083E000A1B09F /* ed25519_fe.swift */; };
@@ -1008,6 +1010,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D25491D20304C080088028C /* extensions.swift in Sources */,
+				6D25491E20304C100088028C /* ed25519.swift in Sources */,
 				A22303721FD5701E00CA0FE8 /* ed25519_utility.swift in Sources */,
 				A22303731FD5701E00CA0FE8 /* ed25519_fe.swift in Sources */,
 				A22303741FD5701E00CA0FE8 /* ed25519_ge.swift in Sources */,
